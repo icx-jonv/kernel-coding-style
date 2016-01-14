@@ -28,6 +28,7 @@ command! SetLinuxFormatting call SetLinuxFormatting()
 function s:LinuxSettings()
     setlocal tabstop=8
     setlocal shiftwidth=8
+    setlocal softtabstop=8
     setlocal textwidth=80
     setlocal noexpandtab
 
@@ -45,6 +46,8 @@ endfunction
 
 function s:LinuxHighlighting()
     highlight default link LinuxError ErrorMsg
+
+    setlocal nolist
 
     syn match LinuxError / \+\ze\t/     " spaces before tab
     syn match LinuxError /\s\+$/        " trailing whitespaces
